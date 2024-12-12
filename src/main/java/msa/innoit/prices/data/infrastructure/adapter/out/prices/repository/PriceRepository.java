@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface PriceRepository extends JpaRepository<PriceEntity, Integer> {
 
-  @Query(value = "SELECT * FROM T_PRICES WHERE PRI_PRODUCT_ID = ?2 AND "
-      + "PRI_BRAND_ID = ?3 AND ?1 BETWEEN PRI_START_DATE AND PRI_END_DATE", nativeQuery = true)
+  @Query(value = "SELECT p FROM PriceEntity p WHERE p.productId = ?2 AND "
+      + "p.brandId = ?3 AND ?1 BETWEEN p.startDate AND p.endDate")
   List<PriceEntity> findByApplicationDateAndProductIdAndBrandId(LocalDateTime applicationDate,
       Integer productId, Integer brandId);
 }
