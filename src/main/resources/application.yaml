@@ -13,7 +13,7 @@ spring:
     data: classpath:data.sql
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: validate
   h2:
     console:
       enabled: true
