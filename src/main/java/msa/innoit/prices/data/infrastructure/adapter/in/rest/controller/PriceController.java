@@ -8,6 +8,7 @@ import msa.innoit.prices.data.infrastructure.utils.Util;
 import msa.innoit.prices.data.server.PricesApi;
 import msa.innoit.prices.data.server.models.PriceDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,6 +19,7 @@ public class PriceController implements PricesApi {
   private final PriceDtoMapper priceDtoMapper;
 
   @Override
+  @CrossOrigin
   public ResponseEntity<PriceDto> pricesApplicableGet(String applicationDate, Integer productId,
       Integer brandId) {
     Price price = priceService.getPriceByApplicationDateAndProductIdAndBrandIdAndPriority(
