@@ -12,6 +12,7 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import msa.innoit.prices.data.domain.enums.CurrencyEnum;
@@ -21,6 +22,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
+@Builder
 @Table(name = "T_PRICES")
 @AllArgsConstructor
 @NoArgsConstructor
