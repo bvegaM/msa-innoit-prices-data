@@ -46,12 +46,14 @@ paths:
           description: Product identifier.
           schema:
             type: integer
+            minimum: 0
         - name: brandId
           in: query
           required: true
           description: Brand identifier.
           schema:
             type: integer
+            minimum: 0
       responses:
         '200':
           description: Price found successfully.
