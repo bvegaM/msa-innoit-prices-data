@@ -76,6 +76,9 @@ tasks.register('buildSpringServer', org.openapitools.generator.gradle.plugin.tas
 
 tasks.named('test') {
 	useJUnitPlatform()
+	testLogging {
+		events "PASSED", "FAILED", "SKIPPED"
+	}
 }
 
 compileJava.dependsOn buildSpringServer

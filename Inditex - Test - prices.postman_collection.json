@@ -1,0 +1,986 @@
+{
+	"info": {
+		"_postman_id": "350f1522-83a3-4faf-926e-32452d8c32cd",
+		"name": "Inditex - Test - prices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20287435"
+	},
+	"item": [
+		{
+			"name": "Test 1 - Case 1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response body contains expected fields\", function () {",
+							"    const response = pm.response.json();",
+							"    pm.expect(response).to.have.property(\"productId\");",
+							"    pm.expect(response).to.have.property(\"brandId\");",
+							"    pm.expect(response).to.have.property(\"priceList\");",
+							"    pm.expect(response).to.have.property(\"startDate\");",
+							"    pm.expect(response).to.have.property(\"endDate\");",
+							"    pm.expect(response).to.have.property(\"price\");",
+							"    ",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/prices/applicable?applicationDate=2020-06-14T10:00:00&productId=35455&brandId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prices",
+						"applicable"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14T10:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/prices/applicable?applicationDate=2020-06-14T10:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prices",
+								"applicable"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-14T10:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Dec 2024 00:11:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": 35455,\n    \"brandId\": 1,\n    \"priceList\": 1,\n    \"startDate\": \"2020-06-14T00:00:00\",\n    \"endDate\": \"2020-12-31T23:59:59\",\n    \"price\": 35.5\n}"
+				}
+			]
+		},
+		{
+			"name": "Test 2 - Case 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response body contains expected fields\", function () {",
+							"    const response = pm.response.json();",
+							"    pm.expect(response).to.have.property(\"productId\");",
+							"    pm.expect(response).to.have.property(\"brandId\");",
+							"    pm.expect(response).to.have.property(\"priceList\");",
+							"    pm.expect(response).to.have.property(\"startDate\");",
+							"    pm.expect(response).to.have.property(\"endDate\");",
+							"    pm.expect(response).to.have.property(\"price\");",
+							"    ",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/prices/applicable?applicationDate=2020-06-14T16:00:00&productId=35455&brandId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prices",
+						"applicable"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14T16:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/prices/applicable?applicationDate=2020-06-14T16:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prices",
+								"applicable"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-14T16:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Dec 2024 00:12:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": 35455,\n    \"brandId\": 1,\n    \"priceList\": 2,\n    \"startDate\": \"2020-06-14T15:00:00\",\n    \"endDate\": \"2020-06-14T18:30:00\",\n    \"price\": 25.45\n}"
+				}
+			]
+		},
+		{
+			"name": "Test 3 - Case 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response body contains expected fields\", function () {",
+							"    const response = pm.response.json();",
+							"    pm.expect(response).to.have.property(\"productId\");",
+							"    pm.expect(response).to.have.property(\"brandId\");",
+							"    pm.expect(response).to.have.property(\"priceList\");",
+							"    pm.expect(response).to.have.property(\"startDate\");",
+							"    pm.expect(response).to.have.property(\"endDate\");",
+							"    pm.expect(response).to.have.property(\"price\");",
+							"    ",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/prices/applicable?applicationDate=2020-06-14T21:00:00&productId=35455&brandId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prices",
+						"applicable"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14T21:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/prices/applicable?applicationDate=2020-06-14T21:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prices",
+								"applicable"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-14T21:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Dec 2024 00:12:53 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": 35455,\n    \"brandId\": 1,\n    \"priceList\": 1,\n    \"startDate\": \"2020-06-14T00:00:00\",\n    \"endDate\": \"2020-12-31T23:59:59\",\n    \"price\": 35.5\n}"
+				}
+			]
+		},
+		{
+			"name": "Test 4 - Case 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response body contains expected fields\", function () {",
+							"    const response = pm.response.json();",
+							"    pm.expect(response).to.have.property(\"productId\");",
+							"    pm.expect(response).to.have.property(\"brandId\");",
+							"    pm.expect(response).to.have.property(\"priceList\");",
+							"    pm.expect(response).to.have.property(\"startDate\");",
+							"    pm.expect(response).to.have.property(\"endDate\");",
+							"    pm.expect(response).to.have.property(\"price\");",
+							"    ",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/prices/applicable?applicationDate=2020-06-15T10:00:00&productId=35455&brandId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prices",
+						"applicable"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-15T10:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/prices/applicable?applicationDate=2020-06-15T10:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prices",
+								"applicable"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-15T10:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Dec 2024 00:13:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": 35455,\n    \"brandId\": 1,\n    \"priceList\": 3,\n    \"startDate\": \"2020-06-15T00:00:00\",\n    \"endDate\": \"2020-06-15T11:00:00\",\n    \"price\": 30.5\n}"
+				}
+			]
+		},
+		{
+			"name": "Test 5 - Case 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response body contains expected fields\", function () {",
+							"    const response = pm.response.json();",
+							"    pm.expect(response).to.have.property(\"productId\");",
+							"    pm.expect(response).to.have.property(\"brandId\");",
+							"    pm.expect(response).to.have.property(\"priceList\");",
+							"    pm.expect(response).to.have.property(\"startDate\");",
+							"    pm.expect(response).to.have.property(\"endDate\");",
+							"    pm.expect(response).to.have.property(\"price\");",
+							"    ",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/prices/applicable?applicationDate=2020-06-16T21:00:00&productId=35455&brandId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prices",
+						"applicable"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-16T21:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/prices/applicable?applicationDate=2020-06-16T21:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prices",
+								"applicable"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-16T21:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Dec 2024 00:14:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": 35455,\n    \"brandId\": 1,\n    \"priceList\": 4,\n    \"startDate\": \"2020-06-15T16:00:00\",\n    \"endDate\": \"2020-12-31T23:59:59\",\n    \"price\": 38.95\n}"
+				}
+			]
+		},
+		{
+			"name": "Test 6 - Validations",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/prices/applicable?applicationDate=2000-12-31T00:00:00&productId=35455&brandId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prices",
+						"applicable"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2000-12-31T00:00:00"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Validation Params",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/prices/applicable?applicationDate=2020-12-3100:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prices",
+								"applicable"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-12-3100:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Dec 2024 00:32:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Violation Error\",\n    \"detail\": \"The following conditions in the parameters were violated\",\n    \"errors\": [\n        {\n            \"message\": \"pricesApplicableGet.applicationDate:This field must be in format yyyy-MM-ddTHH:mm:ss\"\n        }\n    ],\n    \"status\": 400\n}"
+				},
+				{
+					"name": "Not Found Data Exception",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/prices/applicable?applicationDate=2000-12-31T00:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prices",
+								"applicable"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2000-12-31T00:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Dec 2024 00:33:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Test 6 - Validations",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/prices/applicable?applicationDate=2000-12-31T00:00:00&productId=35455&brandId=-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prices",
+								"applicable"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2000-12-31T00:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "-1"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Dec 2024 00:38:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Violation Error\",\n    \"detail\": \"The following conditions in the parameters were violated\",\n    \"errors\": [\n        {\n            \"message\": \"pricesApplicableGet.brandId:must be greater than or equal to 0\"\n        }\n    ],\n    \"status\": 400\n}"
+				},
+				{
+					"name": "Validate Minimum value productId and brandId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/prices/applicable?applicationDate=2000-12-31T00:00:00&productId=-1&brandId=-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prices",
+								"applicable"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2000-12-31T00:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "-1"
+								},
+								{
+									"key": "brandId",
+									"value": "-1"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Dec 2024 00:38:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Violation Error\",\n    \"detail\": \"The following conditions in the parameters were violated\",\n    \"errors\": [\n        {\n            \"message\": \"pricesApplicableGet.productId:must be greater than or equal to 0\"\n        },\n        {\n            \"message\": \"pricesApplicableGet.brandId:must be greater than or equal to 0\"\n        }\n    ],\n    \"status\": 400\n}"
+				}
+			]
+		}
+	]
+}
